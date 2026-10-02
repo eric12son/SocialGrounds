@@ -1,32 +1,98 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewpoint" content = "width=device-width, initial-scale=1.0">
-        <title>Social Grounds Coffee & Tea</title>
-        <link rel = "stylesheet" href = "style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Welcome to Social Grounds!</h1>
-            <nav>
-                <a href = "#">Home</a>
-                <a href = "#">Menu</a>
-                <a href = "#">About</a>
-                <a href = "#">Contact</a>
-            </nav>
-        </header>
-        <main>
-            <section>
-                <h2>Coffee & Bagels!</h2>
-                <p>Come and enojoy your daily dose of caffeine with us!</p>
-            </section>
-        </main>
-        <footer>
-            <p>
-                 &copy; 2025 Social Grounds. All Rights Reserved.</p>
-            </p>
-        </footer>
-        <script src = "script.js"></script> 
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Social Grounds — coffee, tea & bagels.">
+  <meta name="theme-color" content="#3b2a20">
+  <title>Social Grounds Coffee & Tea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="announcement" class="announcement" hidden>
+    <p id="announcement-text"></p>
+    <button id="announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+  <header class="site-header">
+    <a href="#home" class="logo" data-name></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#menu">Menu</a>
+      <a href="#news">News</a>
+      <a href="#about">About</a>
+      <a href="#visit">Visit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <h1>Welcome to <span data-name></span></h1>
+      <p id="tagline" class="tagline"></p>
+      <div id="open-status" class="open-status"></div>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">See the Menu</a>
+        <a href="#visit" class="btn btn-secondary">Find Us</a>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <h2>Menu</h2>
+      <input id="menu-search" class="menu-search" type="search" placeholder="Search the menu…" aria-label="Search the menu">
+      <div id="menu-tabs" class="menu-tabs" role="tablist"></div>
+      <div id="menu-items" class="menu-items"></div>
+    </section>
+
+    <section id="news" class="section section-alt">
+      <h2>News &amp; Events</h2>
+      <div id="news-list" class="news-list"></div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <div id="about-text" class="about-text"></div>
+    </section>
+
+    <section id="visit" class="section section-alt">
+      <h2>Visit Us</h2>
+      <div class="visit-grid">
+        <div>
+          <h3>Hours</h3>
+          <table id="hours-table" class="hours-table"></table>
+        </div>
+        <div>
+          <h3>Location</h3>
+          <p id="address"></p>
+          <a id="map-link" class="btn btn-secondary" target="_blank" rel="noopener">Get Directions</a>
+          <p class="contact-line"><a id="phone-link"></a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Get in Touch</h2>
+      <p>Questions, feedback, catering, or just want to say hi? Send us a note.</p>
+      <form id="contact-form" class="contact-form">
+        <label>Your name<input name="name" required></label>
+        <label>Message<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-note">This opens your email app with the message ready to send.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div id="social-links" class="social-links"></div>
+    <p>&copy; <span id="year"></span> <span data-name></span>. All rights reserved.</p>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
