@@ -25,6 +25,8 @@ Or just ask Claude: *"Add a pumpkin muffin for $3.50 to the menu"* and it will m
 | Mark something sold out | Add `soldOut: true` to the item |
 | Post news or an event | Add an entry at the top of `news` |
 | Add Instagram etc. | Paste the full link into `social` |
+| Turn on the contact form | Put your email in `email` |
+| Show a menu item with no price | Use `price: ""` |
 
 ## If the site breaks after an edit
 

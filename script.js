@@ -102,9 +102,17 @@
   $("#address").textContent = site.address;
   $("#map-link").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(site.address);
   const phoneLink = $("#phone-link");
-  phoneLink.textContent = "📞 " + site.phone;
+  phoneLink.textContent = site.phone;
   phoneLink.href = "tel:" + site.phone.replace(/[^\d+]/g, "");
 
+  // Contact form only works once an email is set in content.js
+  if (!site.email) {
+    $("#contact-form").hidden = true;
+    const ig = site.social && site.social.instagram;
+    $("#contact-alt").innerHTML =
+      `Call us at <a href="tel:${site.phone.replace(/[^\d+]/g, "")}">${escapeHtml(site.phone)}</a>` +
+      (ig ? ` or message us on <a href="${escapeHtml(ig)}" target="_blank" rel="noopener">Instagram</a>.` : ".");
+  }
   $("#contact-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -167,7 +175,7 @@
                 ${i.description ? `<p>${escapeHtml(i.description)}</p>` : ""}
                 ${(i.tags || []).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
               </div>
-              <span class="price">$${escapeHtml(i.price)}</span>
+              ${i.price ? `<span class="price">$${escapeHtml(i.price)}</span>` : ""}
             </div>`)
           .join("");
       })

@@ -10,8 +10,8 @@
  *     will stop the site from loading.
  *   - To add an item, copy an existing one (from { to },)
  *     and paste it right below, then change the text.
- *   - Anything marked PLACEHOLDER is made-up — replace it
- *     with your real info.
+ *   - Lines marked VERIFY came from public listings (Yelp,
+ *     Toast, Instagram) — double-check them.
  * ============================================================
  */
 
@@ -19,10 +19,11 @@ window.SITE = {
 
   // ---------- BASICS ----------
   name: "Social Grounds",
-  tagline: "Coffee, tea & bagels — come as you are, stay a while.",
-  phone: "(555) 123-4567",                       // PLACEHOLDER
-  email: "hello@socialgrounds.example",          // PLACEHOLDER
-  address: "123 Main Street, Your Town, ST 00000", // PLACEHOLDER
+  fullName: "Social Grounds Coffee & Tea on Pike",
+  tagline: "Coffee & tea handcrafted steps from Pike Place Market.",
+  phone: "(425) 455-5422",                    // VERIFY
+  email: "",                                  // Add an email to turn on the contact form
+  address: "1914 1st Ave, Seattle, WA 98101",
 
   // ---------- ANNOUNCEMENT BAR ----------
   // Shows at the very top of the site. Set show: false to hide it.
@@ -30,81 +31,71 @@ window.SITE = {
   // who closed the old one will see the new one.
   announcement: {
     show: true,
-    id: "grand-opening-1",
-    text: "☕ Now open! Try our seasonal maple latte this week.", // PLACEHOLDER
+    id: "welcome-1",
+    text: "Try our signature Einspanner — classic, caramel, or matcha.",
   },
 
   // ---------- HOURS ----------
   // Use 24-hour time ("07:00", "18:30"). Use null for closed days.
   hours: {
-    monday:    { open: "07:00", close: "17:00" },
-    tuesday:   { open: "07:00", close: "17:00" },
-    wednesday: { open: "07:00", close: "17:00" },
-    thursday:  { open: "07:00", close: "17:00" },
+    monday:    { open: "07:00", close: "18:00" },
+    tuesday:   { open: "07:00", close: "18:00" },
+    wednesday: { open: "07:00", close: "18:00" },
+    thursday:  { open: "07:00", close: "18:00" },
     friday:    { open: "07:00", close: "19:00" },
-    saturday:  { open: "08:00", close: "19:00" },
-    sunday:    null,
+    saturday:  { open: "07:00", close: "19:00" },
+    sunday:    { open: "07:00", close: "18:00" }, // VERIFY — listings disagree on Sunday
   },
 
   // ---------- MENU ----------
-  // Add "tags" like "vegan", "new", "seasonal", "gluten-free" (optional).
+  // price: "" hides the price. Add "tags" like "signature", "new", "vegan".
   // Set soldOut: true to show an item as temporarily unavailable.
+  // NOTE: only a few items/prices could be found online — add the rest.
   menu: [
     {
       category: "Coffee",
       items: [
-        { name: "Drip Coffee",   price: "2.75", description: "Our house blend, freshly brewed." },
-        { name: "Latte",         price: "4.50", description: "Espresso with steamed milk." },
-        { name: "Maple Latte",   price: "5.25", description: "Real maple syrup, a hint of cinnamon.", tags: ["seasonal", "new"] },
-        { name: "Cold Brew",     price: "4.25", description: "Steeped 18 hours, smooth and bold." },
+        { name: "Einspanner Latte",   price: "6.99", description: "Espresso topped with a thick layer of sweet cream.", tags: ["signature"] },
+        { name: "Caramel Einspanner", price: "",     description: "Our Einspanner with caramel.", tags: ["signature"] }, // VERIFY price
+        { name: "Latte",              price: "5.25+", description: "Espresso with steamed milk. Made with certified organic beans." },
       ],
     },
     {
       category: "Tea",
       items: [
-        { name: "Chai Latte",     price: "4.75", description: "Spiced black tea with steamed milk." },
-        { name: "Matcha Latte",   price: "5.00", description: "Ceremonial-grade matcha.", tags: ["vegan option"] },
-        { name: "Loose Leaf Tea", price: "3.25", description: "Ask about today's selection." },
+        { name: "Matcha Einspanner", price: "7.99", description: "Matcha topped with sweet cream.", tags: ["signature"] },
+        { name: "Tea",               price: "",     description: "Ask about today's selection." }, // VERIFY price
       ],
     },
     {
-      category: "Bagels & Food",
+      category: "Food",
       items: [
-        { name: "Plain Bagel",        price: "2.50", description: "With butter or cream cheese." },
-        { name: "Everything Bagel",   price: "2.75", description: "The classic, toasted to order." },
-        { name: "Breakfast Sandwich", price: "7.50", description: "Egg, cheese & choice of bacon or avocado." },
-        { name: "Blueberry Muffin",   price: "3.25", description: "Baked fresh every morning.", soldOut: false },
+        { name: "Bagel with Cream Cheese", price: "4.59", description: "Or with butter." },
+        { name: "French Toast",            price: "5.99", description: "" },        // VERIFY description
+        { name: "Start Fresh",             price: "6.99", description: "" },        // VERIFY description
+        { name: "Pastries",                price: "",     description: "Fresh from Macrina Bakery." },
       ],
     },
   ],
 
   // ---------- NEWS & EVENTS ----------
-  // Newest first. Dates as "YYYY-MM-DD".
+  // Newest first. Dates as "YYYY-MM-DD". Example:
+  //   { date: "2026-10-15", title: "Fall Menu", text: "Pumpkin lattes are back!" },
   news: [
-    {
-      date: "2026-10-10",
-      title: "Open Mic Night",                    // PLACEHOLDER
-      text: "Bring your guitar, poems, or just your ears. 6–8pm.",
-    },
-    {
-      date: "2026-10-01",
-      title: "Fall Menu Is Here",                 // PLACEHOLDER
-      text: "Maple lattes, pumpkin bagels, and more — available all season.",
-    },
   ],
 
   // ---------- ABOUT ----------
   // Each line in quotes is its own paragraph.
   about: [
-    "Social Grounds is a neighborhood cafe built around good coffee and good company.", // PLACEHOLDER
-    "Whether you're grabbing a quick drip on the way to work or settling in with friends, there's a seat for you here.",
+    "At Social Grounds, we believe coffee is best enjoyed in great company. Our space is crafted to spark conversation and connection.",
+    "We're a locally owned cafe on 1st Ave, just steps from Pike Place Market, serving coffee made with certified organic beans, tea, and pastries from Macrina Bakery.",
   ],
 
   // ---------- SOCIAL LINKS ----------
-  // Leave a link as "" to hide that icon.
+  // Leave a link as "" to hide it.
   social: {
-    instagram: "",
-    facebook: "",
+    instagram: "https://www.instagram.com/socialgrounds_coffee_tea_pike/",
+    facebook: "https://www.facebook.com/p/Social-Grounds-Coffee-and-Tea-Pike-Place-61580242275183/",
     tiktok: "",
   },
 };
