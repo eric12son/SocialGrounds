@@ -22,7 +22,7 @@ window.SITE = {
   fullName: "Social Grounds Coffee & Tea on Pike",
   tagline: "Coffee & tea handcrafted steps from Pike Place Market.",
   phone: "(425) 455-5422",                    // VERIFY
-  email: "",                                  // Add an email to turn on the contact form
+  email: "hello@example.com",                 // PLACEHOLDER — replace with your real email
   address: "1914 1st Ave, Seattle, WA 98101",
 
   // ---------- ANNOUNCEMENT BAR ----------
@@ -81,7 +81,18 @@ window.SITE = {
   // ---------- NEWS & EVENTS ----------
   // Newest first. Dates as "YYYY-MM-DD". Example:
   //   { date: "2026-10-15", title: "Fall Menu", text: "Pumpkin lattes are back!" },
+  // The two entries below are SAMPLES to show the layout — replace or delete them.
   news: [
+    {
+      date: "2026-10-15",
+      title: "Sample Event: Latte Art Night",
+      text: "This is placeholder text. Use News & Events for specials, events, and updates.",
+    },
+    {
+      date: "2026-10-01",
+      title: "Sample Update: Fall Drinks",
+      text: "This is placeholder text. Your newest post shows first.",
+    },
   ],
 
   // ---------- ABOUT ----------

@@ -115,6 +115,11 @@
   }
   $("#contact-form").addEventListener("submit", (e) => {
     e.preventDefault();
+    // Placeholder email: show a notice instead of opening a mail app
+    if (/example\.(com|org|net)$|\.example$/.test(site.email)) {
+      $(".form-note").textContent = "The contact form isn't connected yet. Please call or message us on Instagram.";
+      return;
+    }
     const data = new FormData(e.target);
     const subject = `Message from ${data.get("name")} via website`;
     window.location.href =
