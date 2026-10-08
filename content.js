@@ -10,8 +10,7 @@
  *     will stop the site from loading.
  *   - To add an item, copy an existing one (from { to },)
  *     and paste it right below, then change the text.
- *   - Lines marked VERIFY came from public listings (Yelp,
- *     Toast, Instagram) — double-check them.
+ *   - Anything marked PLACEHOLDER is filler — replace it later.
  * ============================================================
  */
 
@@ -21,7 +20,7 @@ window.SITE = {
   name: "Social Grounds",
   fullName: "Social Grounds Coffee & Tea on Pike",
   tagline: "Coffee & tea handcrafted steps from Pike Place Market.",
-  phone: "(425) 455-5422",                    // VERIFY
+  phone: "(425) 455-5422",
   email: "hello@example.com",                 // PLACEHOLDER — replace with your real email
   address: "1914 1st Ave, Seattle, WA 98101",
 
@@ -42,38 +41,51 @@ window.SITE = {
     tuesday:   { open: "07:00", close: "18:00" },
     wednesday: { open: "07:00", close: "18:00" },
     thursday:  { open: "07:00", close: "18:00" },
-    friday:    { open: "07:00", close: "19:00" },
-    saturday:  { open: "07:00", close: "19:00" },
-    sunday:    { open: "07:00", close: "18:00" }, // VERIFY — listings disagree on Sunday
+    friday:    { open: "07:00", close: "18:30" },
+    saturday:  { open: "07:00", close: "18:30" },
+    sunday:    { open: "07:00", close: "17:00" },
   },
 
   // ---------- MENU ----------
-  // price: "" hides the price. Add "tags" like "signature", "new", "vegan".
+  // price: "" hides the price (e.g. price: "6.50" shows $6.50).
+  // Add "tags" like "signature", "new", "vegan".
   // Set soldOut: true to show an item as temporarily unavailable.
-  // NOTE: only a few items/prices could be found online — add the rest.
   menu: [
     {
-      category: "Coffee",
+      category: "Signatures",
       items: [
-        { name: "Einspanner Latte",   price: "6.99", description: "Espresso topped with a thick layer of sweet cream.", tags: ["signature"] },
-        { name: "Caramel Einspanner", price: "",     description: "Our Einspanner with caramel.", tags: ["signature"] }, // VERIFY price
-        { name: "Latte",              price: "5.25+", description: "Espresso with steamed milk. Made with certified organic beans." },
+        { name: "Einspanner Latte",   price: "", description: "Espresso topped with sweet cream.", tags: ["signature"] },
+        { name: "Caramel Einspanner", price: "", description: "Our Einspanner with caramel.", tags: ["signature"] },
+        { name: "Matcha Einspanner",  price: "", description: "Matcha topped with sweet cream.", tags: ["signature"] },
+        { name: "Mango Matcha",       price: "", description: "Mango and matcha with creamy foam and tapioca pearls.", tags: ["signature"] },
       ],
     },
     {
-      category: "Tea",
+      category: "Coffee & Tea",
       items: [
-        { name: "Matcha Einspanner", price: "7.99", description: "Matcha topped with sweet cream.", tags: ["signature"] },
-        { name: "Tea",               price: "",     description: "Ask about today's selection." }, // VERIFY price
+        { name: "House Brew",         price: "", description: "Our drip coffee, brewed fresh." },
+        { name: "Americano",          price: "", description: "Two shots of our house espresso over hot water." },
+        { name: "Latte",              price: "", description: "Espresso with steamed milk." },
+        { name: "Espresso Macchiato", price: "", description: "Espresso marked with a little milk foam." },
+        { name: "Tea",                price: "", description: "Choose from nine Smith Tea options." },
+        { name: "Steamer",            price: "", description: "Steamed milk of your choice." },
       ],
     },
     {
-      category: "Food",
+      category: "Breakfast",
       items: [
-        { name: "Bagel with Cream Cheese", price: "4.59", description: "Or with butter." },
-        { name: "French Toast",            price: "5.99", description: "" },        // VERIFY description
-        { name: "Start Fresh",             price: "6.99", description: "" },        // VERIFY description
-        { name: "Pastries",                price: "",     description: "Fresh from Macrina Bakery." },
+        { name: "Egg Sandwich",  price: "", description: "" },
+        { name: "Protein Start", price: "", description: "An egg sandwich with a 12 oz drip coffee." },
+        { name: "Bagels",        price: "", description: "With cream cheese or butter. Also available by the dozen." },
+      ],
+    },
+    {
+      category: "Bakery",
+      items: [
+        { name: "Macrina Pastries", price: "", description: "Fresh from Seattle's Macrina Bakery." },
+        { name: "Morning Roll",     price: "", description: "" },
+        { name: "Croffle",          price: "", description: "A croissant pressed in a waffle iron." },
+        { name: "Raisin Cookie",    price: "", description: "" },
       ],
     },
   ],
@@ -106,7 +118,7 @@ window.SITE = {
   // Leave a link as "" to hide it.
   social: {
     instagram: "https://www.instagram.com/socialgrounds_coffee_tea_pike/",
-    facebook: "https://www.facebook.com/p/Social-Grounds-Coffee-and-Tea-Pike-Place-61580242275183/",
+    facebook: "",
     tiktok: "",
   },
 };
